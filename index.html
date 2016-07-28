@@ -1,0 +1,460 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>FlameFy JS API Documentation</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #151515;
+  background-color: #ac4142;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #505050;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #d0d0d0;
+}
+.highlight .p, .highlight .pi {
+  color: #d0d0d0;
+}
+.highlight .gi {
+  color: #90a959;
+}
+.highlight .gd {
+  color: #ac4142;
+}
+.highlight .gh {
+  color: #6a9fb5;
+  background-color: #151515;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #aa759f;
+}
+.highlight .kc {
+  color: #d28445;
+}
+.highlight .kt {
+  color: #d28445;
+}
+.highlight .kd {
+  color: #d28445;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #90a959;
+}
+.highlight .sr {
+  color: #75b5aa;
+}
+.highlight .si {
+  color: #8f5536;
+}
+.highlight .se {
+  color: #8f5536;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #6a9fb5;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #90a959;
+}
+.highlight .ss {
+  color: #90a959;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;javascript&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <p style="text-align: center;">
+        <img style="width: 50px;" src="images/logo.png" />
+      </p>
+        <div class="lang-selector">
+              <a href="#" data-language-name="javascript">javascript</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to FlameFy JS API</p>
+
+<h1 id="getting-started">Getting Started</h1>
+
+<blockquote>
+<p>Don&rsquo;t forget to change the API Key, if you don&rsquo;t have one, please contact us.</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
+  <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="nx">s</span><span class="p">,</span><span class="nx">v</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span>
+    <span class="nx">e</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">s</span><span class="p">),</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">s</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="nx">e</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">v</span><span class="p">;</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span> <span class="nx">e</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'load'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">c</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span> <span class="p">},</span> <span class="kc">false</span><span class="p">);</span> <span class="p">}</span>
+    <span class="nx">y</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span>
+  <span class="p">})(</span><span class="nb">document</span><span class="p">,</span><span class="s1">'script'</span><span class="p">,</span><span class="s1">'https://s3-eu-west-1.amazonaws.com/flm-api/flm-js-1-0-0.js'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">initFlmJs</span><span class="p">(</span><span class="s1">'CHANGE_ME'</span><span class="p">,</span> <span class="s1">'http://flamefy.dev:3000/api'</span><span class="p">)</span>
+    <span class="c1">// First params is the API key for the application</span>
+    <span class="c1">// last params is optional, default to http://api.flamefy.com/api</span>
+  <span class="p">});</span>
+<span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span></code></pre>
+
+<p>Before start anything, you have to embed our JS library and initialize it with your API Key.</p>
+
+<aside class="notice">
+You must replace <code>CHANGE_ME</code> with your FlameFy API key.
+</aside>
+
+<h1 id="disable-cookies">Disable Cookies</h1>
+<pre class="highlight javascript"><code><span class="c1">//...</span>
+<span class="nx">initFlmJs</span><span class="p">(</span><span class="s1">'YOUR_API_KEY_HERE'</span><span class="p">)</span>
+<span class="nx">FlmJs</span><span class="p">.</span><span class="nx">allowCookies</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="c1">//...</span>
+
+<span class="c1">// OR</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s2">"flmjs:loaded"</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">FlmJs</span><span class="p">.</span><span class="nx">allowCookies</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre>
+
+<p>For some reasons you will have to disable cookies, here is how you can do it.</p>
+
+<aside class="notice">
+You will have to keep track of the createad audience and pass the audience identifier to every viewer/tag/event API call
+</aside>
+
+<h1 id="audience">Audience</h1>
+
+<h2 id="register-or-retrieve">Register or Retrieve</h2>
+<pre class="highlight javascript"><code><span class="nx">FlmAudience</span><span class="p">.</span><span class="nx">register</span><span class="p">({</span>
+  <span class="na">first_name</span><span class="p">:</span> <span class="s1">'Jean'</span><span class="p">,</span>
+  <span class="na">last_name</span><span class="p">:</span> <span class="s1">'Dupont'</span><span class="p">,</span>
+  <span class="na">email</span><span class="p">:</span> <span class="s1">'foo.bar@test.com'</span><span class="p">,</span>
+  <span class="na">twitter_name</span><span class="p">:</span> <span class="s1">'test'</span><span class="p">,</span>
+  <span class="na">phone</span><span class="p">:</span> <span class="s1">'+33000000000'</span><span class="p">,</span>
+  <span class="na">zip_code</span><span class="p">:</span> <span class="s1">'75100'</span><span class="p">,</span>
+  <span class="na">address</span><span class="p">:</span> <span class="s1">'1 Rue du Parc, Paris'</span><span class="p">,</span>
+  <span class="na">company</span><span class="p">:</span> <span class="s1">'World Company'</span><span class="p">,</span>
+  <span class="na">title</span><span class="p">:</span> <span class="s1">'mr'</span><span class="p">,</span>
+  <span class="na">job_title</span><span class="p">:</span> <span class="s1">'Owner'</span><span class="p">,</span>
+  <span class="na">country_code</span><span class="p">:</span> <span class="s1">'FR'</span><span class="p">,</span>
+  <span class="na">external_id</span><span class="p">:</span> <span class="s1">'XXXXXX'</span><span class="p">,</span>
+  <span class="na">extra</span><span class="p">:</span> <span class="p">{</span> <span class="na">field1</span><span class="p">:</span> <span class="s1">'1'</span><span class="p">,</span> <span class="na">field2</span><span class="p">:</span> <span class="s1">'2'</span> <span class="p">}</span>
+<span class="p">},</span> <span class="s1">'merge'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">audience</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">currentAudience</span> <span class="o">=</span> <span class="nx">audience</span>
+<span class="p">});</span>
+</code></pre>
+
+<aside class="notice">
+This action will set a cookie name <code>flm_api_token</code> to keep trace of the audience
+</aside>
+
+<h2 id="register-anonymous">Register anonymous</h2>
+
+<blockquote>
+<p>Optionally, if the apiToken cookie is set, you can pass it to the method</p>
+</blockquote>
+<pre class="highlight javascript"><code><span class="nx">FlmAudience</span><span class="p">.</span><span class="nx">register</span><span class="p">({},</span> <span class="s1">'merge'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">audience</span><span class="p">)</span> <span class="p">{</span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">currentAudience</span> <span class="o">=</span> <span class="nx">audience</span>
+<span class="p">})</span>
+
+<span class="c1">// Or with apiToken cookie</span>
+
+<span class="nx">FlmAudience</span><span class="p">.</span><span class="nx">register</span><span class="p">({</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">FlmCookie</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">},</span> <span class="s1">'merge'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">audience</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">currentAudience</span> <span class="o">=</span> <span class="nx">audience</span>
+<span class="p">})</span>
+</code></pre>
+
+<h2 id="attach-to-a-scenario-create-a-viewer">Attach to a scenario (create a viewer)</h2>
+<pre class="highlight javascript"><code><span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">storyId</span><span class="p">,</span> <span class="p">{</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">storyId</span><span class="p">,</span> <span class="p">{</span> <span class="na">external_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">external_id</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">storyId</span><span class="p">,</span> <span class="p">{</span> <span class="na">audience_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">id</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">storyId</span><span class="p">)</span>
+</code></pre>
+
+<aside class="notice">
+Call with one parameter will use the stored cookie to identify the audience
+</aside>
+
+<h2 id="create-for-a-scenario">Create for a scenario</h2>
+<pre class="highlight javascript"><code><span class="nx">FlmAudience</span><span class="p">.</span><span class="nx">registerViewer</span><span class="p">(</span><span class="nx">storyId</span><span class="p">,</span> <span class="p">{</span>
+  <span class="na">first_name</span><span class="p">:</span> <span class="s1">'Jean'</span><span class="p">,</span>
+  <span class="na">last_name</span><span class="p">:</span> <span class="s1">'Dupont'</span><span class="p">,</span>
+  <span class="na">email</span><span class="p">:</span> <span class="s1">'foo.bar@test.com'</span><span class="p">,</span>
+  <span class="na">twitter_name</span><span class="p">:</span> <span class="s1">'test'</span><span class="p">,</span>
+  <span class="na">phone</span><span class="p">:</span> <span class="s1">'+33000000000'</span><span class="p">,</span>
+  <span class="na">zip_code</span><span class="p">:</span> <span class="s1">'75100'</span><span class="p">,</span>
+  <span class="na">address</span><span class="p">:</span> <span class="s1">'1 Rue du Parc, Paris'</span><span class="p">,</span>
+  <span class="na">company</span><span class="p">:</span> <span class="s1">'World Company'</span><span class="p">,</span>
+  <span class="na">title</span><span class="p">:</span> <span class="s1">'mr'</span><span class="p">,</span>
+  <span class="na">job_title</span><span class="p">:</span> <span class="s1">'Owner'</span><span class="p">,</span>
+  <span class="na">country_code</span><span class="p">:</span> <span class="s1">'FR'</span><span class="p">,</span>
+  <span class="na">extra</span><span class="p">:</span> <span class="p">{</span> <span class="na">field1</span><span class="p">:</span> <span class="s1">'1'</span><span class="p">,</span> <span class="na">field2</span><span class="p">:</span> <span class="s1">'2'</span> <span class="p">}</span>
+<span class="p">},</span> <span class="s1">'overwrite'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">audience</span><span class="p">)</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">currentAudience</span> <span class="o">=</span> <span class="nx">audience</span> <span class="p">})</span>
+</code></pre>
+
+<aside class="notice">
+This action will set a cookie name flm_api_token to keep trace of the audience
+</aside>
+
+<h2 id="add-a-tag">Add a tag</h2>
+<pre class="highlight javascript"><code><span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'BigData'</span><span class="p">,</span> <span class="p">{</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'BigData'</span><span class="p">,</span> <span class="p">{</span> <span class="na">external_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">external_id</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'BigData'</span><span class="p">,</span> <span class="p">{</span> <span class="na">audience_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">id</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'BigData'</span><span class="p">)</span>
+</code></pre>
+
+<aside class="notice">
+Call with one parameter will use the stored cookie to identify the audience
+</aside>
+
+<h2 id="create-an-event-in-a-story">Create an event in a Story</h2>
+<pre class="highlight javascript"><code><span class="nx">FlmEvent</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'anEventCode'</span><span class="p">,</span> <span class="nx">storyId</span><span class="p">,</span> <span class="nx">stepPosition</span><span class="p">,</span> <span class="p">{</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmEvent</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'anEventCode'</span><span class="p">,</span> <span class="nx">storyId</span><span class="p">,</span> <span class="nx">stepPosition</span><span class="p">,</span> <span class="p">{</span> <span class="na">external_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">external_id</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmEvent</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'anEventCode'</span><span class="p">,</span> <span class="nx">storyId</span><span class="p">,</span> <span class="nx">stepPosition</span><span class="p">,</span> <span class="p">{</span> <span class="na">audience_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">id</span> <span class="p">})</span>
+<span class="c1">// OR</span>
+<span class="nx">FlmEvent</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'anEventCode'</span><span class="p">,</span> <span class="nx">storyId</span><span class="p">,</span> <span class="nx">stepPosition</span><span class="p">)</span>
+</code></pre>
+
+          <h1 id="api-reference">API Reference</h1>
+
+<h2 id="flmaudience">FlmAudience</h2>
+
+<h3 id="apitoken">apiToken</h3>
+
+<p>Audience unique API token</p>
+
+<p>Returns <strong>string</strong> Flamefy audience token</p>
+
+<h3 id="id">id</h3>
+
+<p>Audience unique ID</p>
+
+<p>Returns <strong>integer</strong> Flamefy Audience unique identifier</p>
+
+<h3 id="register">register</h3>
+
+<p>Registers or updates an existing audience</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>  <code class="prettyprint">data</code> <strong>Object</strong> Audience attributes
+
+<ul>
+<li>  <code class="prettyprint">data.last_name</code> <strong>string</strong> Last name. Mandatory</li>
+<li>  <code class="prettyprint">data.email</code> <strong>string</strong> Email. Mandatory if no twitter_name</li>
+<li>  <code class="prettyprint">data.twitter_name</code> <strong>string</strong> Twitter name. Mandatory if no email</li>
+<li>  <code class="prettyprint">data.phone</code> <strong>[string]</strong> Phone number in international format (+33000000000)</li>
+<li>  <code class="prettyprint">data.zip_code</code> <strong>[string]</strong> Zip code</li>
+<li>  <code class="prettyprint">data.first_name</code> <strong>string</strong> First name. Mandatory</li>
+<li>  <code class="prettyprint">data.title</code> <strong>[string]</strong> Title. Must be in [&lsquo;mr&rsquo;, &#39;miss&rsquo;, &#39;mme&rsquo;, &#39;dr&rsquo;]</li>
+<li>  <code class="prettyprint">data.job_title</code> <strong>[string]</strong> Job title</li>
+<li>  <code class="prettyprint">data.country_code</code> <strong>[string]</strong> ISO-2 country code (&#39;FR&rsquo; &#39;US&rsquo;&hellip;)</li>
+<li>  <code class="prettyprint">data.external_id</code> <strong>[string]</strong> User identifier in the client system</li>
+<li>  <code class="prettyprint">data.extra</code> <strong>[Object]</strong> Custom fields ({ field1: &#39;1&rsquo;, field2: &#39;2&rsquo; })</li>
+<li>  <code class="prettyprint">data.company</code> <strong>[string]</strong> Company name</li>
+</ul></li>
+<li>  <code class="prettyprint">writeMode</code> <strong>[string]</strong> Write mode for attributes
+                                         Accepted values are &#39;overwrite&rsquo; and &#39;merge&rsquo; (optional, default <code class="prettyprint">&#39;overwrite&#39;</code>)</li>
+</ul>
+
+<p>Returns <strong>Promise</strong> Result of the action with created/updated Audience</p>
+
+<h3 id="registerviewer">registerViewer</h3>
+
+<p>Registers an audience and creates a viewer for it in a story</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>  <code class="prettyprint">storyId</code> <strong>integer</strong> Id of the story</li>
+<li>  <code class="prettyprint">data</code> <strong>Object</strong> Audience attributes
+
+<ul>
+<li>  <code class="prettyprint">data.first_name</code> <strong>string</strong> First name. Mandatory</li>
+<li>  <code class="prettyprint">data.last_name</code> <strong>string</strong> Last name. Mandatory</li>
+<li>  <code class="prettyprint">data.email</code> <strong>string</strong> Email. Mandatory if no twitter_name</li>
+<li>  <code class="prettyprint">data.twitter_name</code> <strong>string</strong> Twitter name. Mandatory if no email</li>
+<li>  <code class="prettyprint">data.phone</code> <strong>[string]</strong> Phone number in international format (+33000000000)</li>
+<li>  <code class="prettyprint">data.company</code> <strong>[string]</strong> Company name</li>
+<li>  <code class="prettyprint">data.title</code> <strong>[string]</strong> Title. Must be in [&#39;mr&rsquo;, &#39;miss&rsquo;, &#39;mme&rsquo;, &#39;dr&rsquo;]</li>
+<li>  <code class="prettyprint">data.job_title</code> <strong>[string]</strong> Job title</li>
+<li>  <code class="prettyprint">data.country_code</code> <strong>[string]</strong> ISO-2 country code (&#39;FR&rsquo; &#39;US&rsquo;&hellip;)</li>
+<li>  <code class="prettyprint">data.external_id</code> <strong>[string]</strong> User identifier in the client system</li>
+<li>  <code class="prettyprint">data.extra</code> <strong>[Object]</strong> Custom fields ({ field1: &#39;1&rsquo;, field2: &#39;2&rsquo; }</li>
+<li>  <code class="prettyprint">data.zip_code</code> <strong>[string]</strong> Zip code</li>
+</ul></li>
+<li>  <code class="prettyprint">writeMode</code> <strong>[string]</strong> Write mode for attributes. Accepted values are
+&#39;overwrite&rsquo; and &#39;merge&rsquo; (optional, default <code class="prettyprint">&#39;overwrite&#39;</code>)</li>
+</ul>
+
+<p>Returns <strong>Promise</strong> Result of the action with created/updated Audience</p>
+
+<h2 id="flmevent">FlmEvent</h2>
+
+<h3 id="id">id</h3>
+
+<p>Event unique ID</p>
+
+<p>Returns <strong>integer</strong> Flamefy Event unique identifier</p>
+
+<h3 id="create">create</h3>
+
+<p>Create an event for an Audience in a Scenario</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>  <code class="prettyprint">eventType</code> <strong>string</strong> Event type</li>
+<li>  <code class="prettyprint">storyId</code> <strong>integer</strong> Flamefy Story identifier</li>
+<li>  <code class="prettyprint">stepPosition</code> <strong>integer</strong> Position of the step to attach the event</li>
+<li>  <code class="prettyprint">data</code> <strong>[Object]</strong> Audience identifier
+                                      Must have one of the followinf property: flm_api_token, external_id, audience_id
+                                      If blank, it will try to use the flm_api_token cookie value (optional, default <code class="prettyprint">{flm_api_token: FlmCookie.apiToken}</code>)
+
+<ul>
+<li>  <code class="prettyprint">data.flm_api_token</code> <strong>[string]</strong> Audience flamefy token (possibly stored in cookie)</li>
+<li>  <code class="prettyprint">data.external_id</code> <strong>[string]</strong> User identifier in the client system</li>
+<li>  <code class="prettyprint">data.audience_id</code> <strong>[integer]</strong> Audience unique identifier</li>
+</ul></li>
+</ul>
+
+<p>Returns <strong>Promise</strong></p>
+
+<h2 id="flmtag">FlmTag</h2>
+
+<p>Flamefy Tag</p>
+
+<h3 id="add">add</h3>
+
+<p>Assign a tag to an audience</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>  <code class="prettyprint">tag</code> <strong>string</strong> Tag to assign</li>
+<li>  <code class="prettyprint">data</code> <strong>[Object]</strong> Audience identifier.
+                                      Must have one of the followinf property: flm_api_token, external_id, audience_id
+                                      If blank, it will try to use the flm_api_token cookie value (optional, default <code class="prettyprint">{flm_api_token: FlmCookie.apiToken}</code>)
+
+<ul>
+<li>  <code class="prettyprint">data.flm_api_token</code> <strong>[string]</strong> Audience flamefy token (possibly stored in cookie)</li>
+<li>  <code class="prettyprint">data.external_id</code> <strong>[string]</strong> User identifier in the client system</li>
+<li>  <code class="prettyprint">data.audience_id</code> <strong>[integer]</strong> Audience unique identifier</li>
+</ul></li>
+</ul>
+
+<p><strong>Examples</strong></p>
+<pre class="highlight javascript"><code><span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="p">{</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">})</span>
+<span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="p">{</span> <span class="na">external_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">external_id</span> <span class="p">})</span>
+<span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'foo'</span><span class="p">,</span> <span class="p">{</span> <span class="na">audience_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">id</span> <span class="p">})</span>
+</code></pre>
+
+<p>Returns <strong>Promise</strong></p>
+
+<h2 id="flmviewer">FlmViewer</h2>
+
+<p>Flamefy Viewer</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>  <code class="prettyprint">storyId</code><br></li>
+</ul>
+
+<h3 id="action">action</h3>
+
+<p>Base url for backend API</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>  <code class="prettyprint">storyId</code> <strong>integer</strong> Flamefy Story identifier</li>
+</ul>
+
+<p>Returns <strong>string</strong></p>
+
+<h3 id="create">create</h3>
+
+<p>Create an audience for a story</p>
+
+<p><strong>Parameters</strong></p>
+
+<ul>
+<li>  <code class="prettyprint">storyId</code> <strong>integer</strong> Flamefy Story identifier</li>
+<li>  <code class="prettyprint">data</code> <strong>[Object]</strong> Audience identifier.
+                                      Must have one of the followinf property: flm_api_token, external_id, audience_id
+                                      If blank, it will try to use the flm_api_token cookie value (optional, default <code class="prettyprint">{flm_api_token: FlmCookie.apiToken}</code>)
+
+<ul>
+<li>  <code class="prettyprint">data.flm_api_token</code> <strong>[string]</strong> Audience flamefy token (possibly stored in cookie)</li>
+<li>  <code class="prettyprint">data.external_id</code> <strong>[string]</strong> User identifier in the client system</li>
+<li>  <code class="prettyprint">data.audience_id</code> <strong>[integer]</strong> Audience unique identifier</li>
+</ul></li>
+</ul>
+
+<p><strong>Examples</strong></p>
+<pre class="highlight javascript"><code><span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">{</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">})</span>
+<span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">{</span> <span class="na">external_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">external_id</span> <span class="p">})</span>
+<span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="p">{</span> <span class="na">audience_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">id</span> <span class="p">})</span>
+</code></pre>
+
+<p>Returns <strong>Promise</strong></p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="javascript">javascript</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
