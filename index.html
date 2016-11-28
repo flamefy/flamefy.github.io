@@ -128,7 +128,7 @@ You need to be a registered customer and get your &lsquo;api key&rsquo; before d
     <span class="nx">e</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">v</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span> <span class="nx">e</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'load'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">c</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span> <span class="p">},</span> <span class="kc">false</span><span class="p">);</span> <span class="p">}</span>
     <span class="nx">y</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span>
-  <span class="p">})(</span><span class="nb">document</span><span class="p">,</span><span class="s1">'script'</span><span class="p">,</span><span class="s1">'https://s3-eu-west-1.amazonaws.com/flm-api/flm-js-1-0-0.js'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="p">})(</span><span class="nb">document</span><span class="p">,</span><span class="s1">'script'</span><span class="p">,</span><span class="s1">'https://cdn.flamefy.com/js/flm-js-1-0-0.js'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
     <span class="nx">initFlmJs</span><span class="p">(</span><span class="s1">'YOUR_API_KEY_HERE'</span><span class="p">)</span>
     <span class="c1">// First param is the API key for the application</span>
     <span class="c1">// last param is optional, default to http://api.flamefy.com/api</span>
@@ -141,7 +141,7 @@ You need to be a registered customer and get your &lsquo;api key&rsquo; before d
 </blockquote>
 
 <p>Before starting anything, you have to embed our JS library and initialize it with your API Key.<br>
-An api key is an access token provided by our technical team. 
+An api key is an access token provided by our technical team.
 This string generation process is based on your calling URL domain and subdomains to guarantee safety and security access to our servers.</p>
 
 <h1 id="privacy-rules-and-cookies">Privacy rules and Cookies</h1>
@@ -173,7 +173,7 @@ You will have to keep track of the created audience and pass the audience identi
 <ul>
 <li> Anonymous: we have no information about the end user, either because no cookies have been set (privacy rules) or we have no detailed data; </li>
 <li> Known: we have in database at least one information (email, external_id, name) that makes it no more anonymous; </li>
-<li> Passive: the Audience is anonymous or known but has no Views data, classically this is a new Audience (just created or imported); </li> 
+<li> Passive: the Audience is anonymous or known but has no Views data, classically this is a new Audience (just created or imported); </li>
 <li> Active: the Audience is anonymous or known and has one or more Views data.</li>
 </ul></p>
 
@@ -232,7 +232,7 @@ This action will set a cookie name <code>flm_api_token</code> to keep trace of t
 <span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">storyId</span><span class="p">)</span>
 </code></pre>
 
-<p>A <strong>Viewer</strong> object represents an end-user interaction with a service. 
+<p>A <strong>Viewer</strong> object represents an end-user interaction with a service.
 <P>In FlameFy, we use a <strong>Scenario</strong> object to represent a touch point between an end-user and any system (a platform like Facebook, Twitter, a website, any digitally based service, etc.).</P></p>
 
 <P>Then to register this interaction, you have to add to your Audience a new Viewer with the scenario_id of the Scenario previously created in the FlameFy back-end. You can precise, using an external_id data, to which Audience the Viewer will be added or let FlameFy find it (using cooky and sessions information).
