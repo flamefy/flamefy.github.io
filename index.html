@@ -117,34 +117,35 @@
       <div class="content">
         <h1 id="introduction">Introduction</h1>
 
-<p>Welcome to FlameFy API. <br>
-This documentation introduces the different ways to send data to FlameFy and manage audiences.
-You need to be a registered customer and get your &lsquo;api key&rsquo; before doing any calls to this API.</p>
+<p>Welcome to FlameFy API. 
+This documentation introduces the different ways to send data to FlameFy and manage audiences.</p>
 
 <h1 id="getting-started">Getting Started</h1>
+
+<blockquote>
+<p>Don&rsquo;t forget to change the API Key, if you don&rsquo;t have one, please contact us.</p>
+</blockquote>
 <pre class="highlight javascript"><code><span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span>
   <span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">d</span><span class="p">,</span><span class="nx">s</span><span class="p">,</span><span class="nx">v</span><span class="p">,</span><span class="nx">c</span><span class="p">,</span><span class="nx">e</span><span class="p">,</span><span class="nx">y</span><span class="p">){</span>
     <span class="nx">e</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="nx">s</span><span class="p">),</span> <span class="nx">y</span> <span class="o">=</span> <span class="nx">d</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="nx">s</span><span class="p">)[</span><span class="mi">0</span><span class="p">];</span>
     <span class="nx">e</span><span class="p">.</span><span class="nx">async</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="nx">e</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="nx">v</span><span class="p">;</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">c</span><span class="p">)</span> <span class="p">{</span> <span class="nx">e</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'load'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span> <span class="nx">c</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span> <span class="p">},</span> <span class="kc">false</span><span class="p">);</span> <span class="p">}</span>
     <span class="nx">y</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="nx">e</span><span class="p">,</span><span class="nx">y</span><span class="p">)</span>
-  <span class="p">})(</span><span class="nb">document</span><span class="p">,</span><span class="s1">'script'</span><span class="p">,</span><span class="s1">'https://cdn.flamefy.com/js/flm-js-1-0-0.js'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">initFlmJs</span><span class="p">(</span><span class="s1">'YOUR_API_KEY_HERE'</span><span class="p">)</span>
-    <span class="c1">// First param is the API key for the application</span>
-    <span class="c1">// last param is optional, default to http://api.flamefy.com/api</span>
+  <span class="p">})(</span><span class="nb">document</span><span class="p">,</span><span class="s1">'script'</span><span class="p">,</span><span class="s1">'https://s3-eu-west-1.amazonaws.com/flm-api/flm-js-1-0-0.js'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">initFlmJs</span><span class="p">(</span><span class="s1">'CHANGE_ME'</span><span class="p">,</span> <span class="s1">'http://flamefy.dev:3000/api'</span><span class="p">)</span>
+    <span class="c1">// First params is the API key for the application</span>
+    <span class="c1">// last params is optional, default to http://api.flamefy.com/api</span>
   <span class="p">});</span>
 <span class="o">&lt;</span><span class="sr">/script</span><span class="err">&gt;
 </span></code></pre>
 
-<blockquote>
-<p>You must replace <code>YOUR_API_KEY_HERE</code> with your FlameFy API key.</p>
-</blockquote>
+<p>Before start anything, you have to embed our JS library and initialize it with your API Key.</p>
 
-<p>Before starting anything, you have to embed our JS library and initialize it with your API Key.<br>
-An api key is an access token provided by our technical team.
-This string generation process is based on your calling URL domain and subdomains to guarantee safety and security access to our servers.</p>
+<aside class="notice">
+You must replace <code>CHANGE_ME</code> with your FlameFy API key.
+</aside>
 
-<h1 id="privacy-rules-and-cookies">Privacy rules and Cookies</h1>
+<h1 id="disable-cookies">Disable Cookies</h1>
 <pre class="highlight javascript"><code><span class="c1">//...</span>
 <span class="nx">initFlmJs</span><span class="p">(</span><span class="s1">'YOUR_API_KEY_HERE'</span><span class="p">)</span>
 <span class="nx">FlmJs</span><span class="p">.</span><span class="nx">allowCookies</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
@@ -156,26 +157,13 @@ This string generation process is based on your calling URL domain and subdomain
 <span class="p">});</span>
 </code></pre>
 
-<p>To track and then manage audiences, FlameFy uses different mechanisms including, for web usages, regular cookies.
-You can disable the tracking with cookies if you have some privacy rules to follow.</p>
+<p>For some reasons you will have to disable cookies, here is how you can do it.</p>
 
 <aside class="notice">
-You will have to keep track of the created audience and pass the audience identifier to every viewer/tag/event API call
+You will have to keep track of the createad audience and pass the audience identifier to every viewer/tag/event API call
 </aside>
 
-<h1 id="audience-management">Audience Management</h1>
-
-<h2 id="concepts">Concepts</h2>
-
-<p>FlameFy is an Audience management system, meaning it collects actions done by end users across the web (via a browser), a mobile application or any other interaction with a software or an internet platform. <br>
-<p>So, an <strong>Audience</strong> is an object describing an end-user according to two main information types: it&rsquo;s identity (email, name, etc&hellip;) and it&rsquo;s behavior (clicks, log in, likes, etc.).  All events building up a behavior are named <strong>Views</strong> and are contextualized (timestamp, IP address, etc.)</p>
-<p> Audience have different status, according to this rules:
-<ul>
-<li> Anonymous: we have no information about the end user, either because no cookies have been set (privacy rules) or we have no detailed data; </li>
-<li> Known: we have in database at least one information (email, external_id, name) that makes it no more anonymous; </li>
-<li> Passive: the Audience is anonymous or known but has no Views data, classically this is a new Audience (just created or imported); </li>
-<li> Active: the Audience is anonymous or known and has one or more Views data.</li>
-</ul></p>
+<h1 id="audience">Audience</h1>
 
 <h2 id="register-or-retrieve">Register or Retrieve</h2>
 <pre class="highlight javascript"><code><span class="nx">FlmAudience</span><span class="p">.</span><span class="nx">register</span><span class="p">({</span>
@@ -197,12 +185,9 @@ You will have to keep track of the created audience and pass the audience identi
 <span class="p">});</span>
 </code></pre>
 
-<p>To register a new audience in your FlameFy database, you can send different information that make it anonymous our know. You will have to add some Viewers to make this Audience active.  </p>
-
-<p>This registration is typically called when en end-user register to your VOD platform, your emailing list or any moment you capture an identity via a form.
 <aside class="notice">
-This action will set a cookie name <code>flm_api_token</code> to keep trace of the audience unless you set the parameter allowCookies to false.
-</aside></p>
+This action will set a cookie name <code>flm_api_token</code> to keep trace of the audience
+</aside>
 
 <h2 id="register-anonymous">Register anonymous</h2>
 
@@ -220,9 +205,7 @@ This action will set a cookie name <code>flm_api_token</code> to keep trace of t
 <span class="p">})</span>
 </code></pre>
 
-<p>Registering an Audience with no information will make it anonymous.</p>
-
-<h2 id="attach-to-a-scenario-create-a-viewer">Attach to a Scenario (create a Viewer)</h2>
+<h2 id="attach-to-a-scenario-create-a-viewer">Attach to a scenario (create a viewer)</h2>
 <pre class="highlight javascript"><code><span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">storyId</span><span class="p">,</span> <span class="p">{</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">})</span>
 <span class="c1">// OR</span>
 <span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">storyId</span><span class="p">,</span> <span class="p">{</span> <span class="na">external_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">external_id</span> <span class="p">})</span>
@@ -232,18 +215,11 @@ This action will set a cookie name <code>flm_api_token</code> to keep trace of t
 <span class="nx">FlmViewer</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="nx">storyId</span><span class="p">)</span>
 </code></pre>
 
-<p>A <strong>Viewer</strong> object represents an end-user interaction with a service.
-<P>In FlameFy, we use a <strong>Scenario</strong> object to represent a touch point between an end-user and any system (a platform like Facebook, Twitter, a website, any digitally based service, etc.).</P></p>
-
-<P>Then to register this interaction, you have to add to your Audience a new Viewer with the scenario_id of the Scenario previously created in the FlameFy back-end. You can precise, using an external_id data, to which Audience the Viewer will be added or let FlameFy find it (using cooky and sessions information).
-</P>
-
-<p><P>You will attach viewers every time a known Audience will do something with your service like starting to watch a movie (VOD), browsing a page (media), etc.
 <aside class="notice">
-Call with one parameter will use the stored cookie to identify the audience.
-</aside></p>
+Call with one parameter will use the stored cookie to identify the audience
+</aside>
 
-<h2 id="create-for-a-scenario">Create for a Scenario</h2>
+<h2 id="create-for-a-scenario">Create for a scenario</h2>
 <pre class="highlight javascript"><code><span class="nx">FlmAudience</span><span class="p">.</span><span class="nx">registerViewer</span><span class="p">(</span><span class="nx">storyId</span><span class="p">,</span> <span class="p">{</span>
   <span class="na">first_name</span><span class="p">:</span> <span class="s1">'Jean'</span><span class="p">,</span>
   <span class="na">last_name</span><span class="p">:</span> <span class="s1">'Dupont'</span><span class="p">,</span>
@@ -260,12 +236,11 @@ Call with one parameter will use the stored cookie to identify the audience.
 <span class="p">},</span> <span class="s1">'overwrite'</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">audience</span><span class="p">)</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">currentAudience</span> <span class="o">=</span> <span class="nx">audience</span> <span class="p">})</span>
 </code></pre>
 
-<p>You can create an Audience and immediately attach an interaction by adding a Viewer, all in a single call.
 <aside class="notice">
 This action will set a cookie name flm_api_token to keep trace of the audience
-</aside></p>
+</aside>
 
-<h2 id="add-a-tag">Add a Tag</h2>
+<h2 id="add-a-tag">Add a tag</h2>
 <pre class="highlight javascript"><code><span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'BigData'</span><span class="p">,</span> <span class="p">{</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">})</span>
 <span class="c1">// OR</span>
 <span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'BigData'</span><span class="p">,</span> <span class="p">{</span> <span class="na">external_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">external_id</span> <span class="p">})</span>
@@ -275,17 +250,29 @@ This action will set a cookie name flm_api_token to keep trace of the audience
 <span class="nx">FlmTag</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="s1">'BigData'</span><span class="p">)</span>
 </code></pre>
 
-<p>A Tag is a simple label that can be set to a lot of different objects in FlameFy, including Viewers, Videos, and more.
-It allows to tag end-users interactions and feed our machine learning algorithms to build up people behaviors and predictions.
-There are no rules about syntax with tags, neither length limit.</p>
-
-<p>A classical case is that you add a Tag &#39;SciFi lover&rsquo; to and Audience that has a lot of Viewers related to interactions on content about Science-Fiction.</p>
-
 <aside class="notice">
 Call with one parameter will use the stored cookie to identify the audience
 </aside>
 
-<h2 id="create-an-event-in-a-scenario">Create an event in a Scenario</h2>
+<h1 id="managing-events">Managing Events</h1>
+
+<h2 id="logging-an-event-in-a-story">Logging an event in a Story</h2>
+
+<p>During the execution of a Story, different events can be performed and then logged by the system.
+Available events differ according to the current step.</p>
+
+<p>For example, if a Step includes a video player, then clicks on &lsquo;play&rsquo;, &#39;pause&rsquo;, etc&hellip; will be logged in.
+Events can also be custom ones. Any event_code sent to the API which is not known will be treated as a custom new one.</p>
+
+<p>To log an Event, you must provide the the event_code, the running scenario_id and the current stepPosition.</p>
+
+<p>Available Events are:</p>
+
+<ul>
+<li>For audio, video, picture player: video_play video_pause, video_finished, chromecast_on chromecast_off
+airplay_on</li>
+<li>For generic player : social_share</li>
+</ul>
 <pre class="highlight javascript"><code><span class="nx">FlmEvent</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'anEventCode'</span><span class="p">,</span> <span class="nx">storyId</span><span class="p">,</span> <span class="nx">stepPosition</span><span class="p">,</span> <span class="p">{</span> <span class="na">flm_api_token</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">apiToken</span> <span class="p">})</span>
 <span class="c1">// OR</span>
 <span class="nx">FlmEvent</span><span class="p">.</span><span class="nx">create</span><span class="p">(</span><span class="s1">'anEventCode'</span><span class="p">,</span> <span class="nx">storyId</span><span class="p">,</span> <span class="nx">stepPosition</span><span class="p">,</span> <span class="p">{</span> <span class="na">external_id</span><span class="p">:</span> <span class="nx">currentAudience</span><span class="p">.</span><span class="nx">attributes</span><span class="p">.</span><span class="nx">external_id</span> <span class="p">})</span>
